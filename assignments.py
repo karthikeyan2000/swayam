@@ -78,12 +78,12 @@ class Week4:
         self.b = int(input())
         print(self.hcf(self.a, self.b))
 
-    # This code passes sample cases 3/4 and test cases 2/3 for assignment 2. If a+b is checked with >=20 it passes
-    # 4/4 sample cases but only 1/3 test cases. So, if anyone can find the issue here, please suggest!
     def a2(self):
         self.a = int(input())
         self.b = int(input())
         if self.a + self.b > 20:
+            print('invalid')
+        elif self.a == self.b:
             print('invalid')
         else:
             print(int(self.factorial(self.a) * self.factorial(self.a + 1) / self.factorial(self.a + 1 - self.b)))
