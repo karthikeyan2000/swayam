@@ -54,3 +54,45 @@ class Week3:
                 self.b.append(i)
                 print(i, end=" ")
 
+
+class Week4:
+    a = 0
+    b = 0
+
+    def hcf(self, a, b):
+        if b == 0:
+            return a
+        else:
+            return self.hcf(b, a % b)
+
+    def factorial(self, n):
+        if n == 1:
+            return n
+        elif n < 1:
+            return "NA"
+        else:
+            return n * self.factorial(n - 1)
+
+    def a1(self):
+        self.a = int(input())
+        self.b = int(input())
+        print(self.hcf(self.a, self.b))
+
+    # This code passes sample cases 3/4 and test cases 2/3. If a+b is checked with >=20 it passes
+    # 4/4 sample cases but only 1/3 test cases. So, if anyone can find the issue here, please suggest!
+    def a2(self):
+        self.a = int(input())
+        self.b = int(input())
+        if self.a + self.b > 20:
+            print('invalid')
+        else:
+            print(int(self.factorial(self.a) * self.factorial(self.a + 1) / self.factorial(self.a + 1 - self.b)))
+
+    def a3(self):
+        self.a = int(input())
+        self.b = 1
+        for i in range(self.a):
+            for j in range(i + 1):
+                print(self.b * self.b, end=" ")
+                self.b += 1
+            print()
